@@ -36,6 +36,12 @@
 @interface VTAcknowledgementsViewController : UITableViewController
 
 /**
+ Custom image for back button. If `nil` default back button is used.
+ */
+@property (nonatomic, strong) UIImage *backButtonImage;
+
+
+/**
  Custom font for the license main text view. If `nil` (default), the system font (size 17) is used.
  */
 @property (nonatomic, strong) UIFont *licenseTextViewFont;

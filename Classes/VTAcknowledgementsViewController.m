@@ -193,10 +193,22 @@ static const CGFloat VTLabelMargin = 20;
                                                                                               target:self
                                                                                               action:@selector(dismissViewController:)];
     }
+    
+    if (self != [self.navigationController.viewControllers firstObject] && self.backButtonImage) {
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:self.backButtonImage
+                                                                                 style:UIBarButtonItemStylePlain
+                                                                                target:self
+                                                                                action:@selector(dismissViewController:)];
+    }
 }
 
 - (void)configureHeaderView
 {
+    if (self.hideHeader) {
+        self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectZero];
+        return;
+    }
+    
     UIFont *font = [UIFont systemFontOfSize:12];
     CGFloat labelWidth = CGRectGetWidth(self.view.frame) - 2 * VTLabelMargin;
     CGFloat labelHeight = [self heightForLabelWithText:self.headerText andWidth:labelWidth];
@@ -220,6 +232,11 @@ static const CGFloat VTLabelMargin = 20;
 
 - (void)configureFooterView
 {
+    if (self.hideFooter) {
+        self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+        return;
+    }
+    
     UIFont *font = [UIFont systemFontOfSize:12];
     CGFloat labelWidth = CGRectGetWidth(self.view.frame) - 2 * VTLabelMargin;
     CGFloat labelHeight = [self heightForLabelWithText:self.footerText andWidth:labelWidth];
