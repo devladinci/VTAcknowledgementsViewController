@@ -90,4 +90,8 @@
  */
 - (instancetype)initWithAcknowledgementsPlistPath:(NSString *)acknowledgementsPlistPath;
 
+@property (nonatomic, strong) UIFont *cellTextFont;
+@property (nonatomic, strong) UIColor *cellTextColor;
+@property (nonatomic) UIEdgeInsets cellSeparatorInsetrs;
+
 @end

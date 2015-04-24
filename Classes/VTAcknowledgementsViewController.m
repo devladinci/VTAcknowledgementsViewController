@@ -32,7 +32,6 @@ static NSString *const VTCellIdentifier                   = @"Cell";
 
 static const CGFloat VTLabelMargin = 20;
 
-
 @interface VTAcknowledgementsViewController ()
 
 + (NSString *)acknowledgementsPlistPathForName:(NSString *)name;
@@ -344,6 +343,18 @@ static const CGFloat VTLabelMargin = 20;
     VTAcknowledgement *acknowledgement = self.acknowledgements[indexPath.row];
     cell.textLabel.text = acknowledgement.title;
     cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
+    
+    if (cellTextColor) {
+        cell.textLabel.textColor = cellTextColor;
+    }
+    
+    if (cellTextFont) {
+        cell.textLabel.font = cellTextFont;
+    }
+    
+    if (cellSeparatorInsetrs != UIEdgeInsetsZero) {
+    
+    }
 
     return cell;
 }
