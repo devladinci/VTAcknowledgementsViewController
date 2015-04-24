@@ -54,6 +54,10 @@
     if ([textView respondsToSelector:@selector(setTextContainerInset:)]) {
         textView.textContainerInset = UIEdgeInsetsMake(12, 10, 12, 10);
     }
+    
+    if (self.textViewSetup) {
+        self.textViewSetup(textView);
+    }
 
     self.view = textView;
 }
