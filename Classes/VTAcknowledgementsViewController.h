@@ -58,11 +58,21 @@
 @property (nonatomic, strong) NSArray *acknowledgements;
 
 /**
+ BOOL indicates that if header should be hided
+ */
+@property (nonatomic) BOOL hideHeader;
+
+/**
  Header text to be displayed above the list of the acknowledgements. 
  It needs to get set before `viewDidLoad` gets called.
  Its value can be defined in the header of the plist file.
  */
 @property (nonatomic, copy) IBInspectable NSString *headerText;
+
+/**
+ BOOL indicates that if footer should be hided
+ */
+@property (nonatomic) BOOL hideFooter;
 
 /**
  Footer text to be displayed below the list of the acknowledgements.

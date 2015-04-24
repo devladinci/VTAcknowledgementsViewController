@@ -180,11 +180,11 @@ static const CGFloat VTLabelMargin = 20;
 {
     [super viewDidLoad];
 
-    if (self.headerText) {
+    if (self.headerText && !self.hideHeader) {
         [self configureHeaderView];
     }
-
-    if (self.footerText) {
+    
+    if (self.footerText && !self.hideFooter) {
         [self configureFooterView];
     }
 
@@ -297,11 +297,11 @@ static const CGFloat VTLabelMargin = 20;
 {
     [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
 
-    if (self.headerText) {
+    if (self.headerText && !self.hideHeader) {
         [self configureHeaderView];
     }
-
-    if (self.footerText) {
+    
+    if (self.footerText && !self.hideFooter) {
         [self configureFooterView];
     }
 }
